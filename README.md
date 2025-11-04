@@ -55,7 +55,7 @@ I wanted to recreate that feeling of looking up at the night sky and seeing bats
 🌐 [Portfolio](https://dms-menula.github.io)  
 💼 [LinkedIn](https://www.linkedin.com/in/dmsmenula/)  
 💻 [GitHub](https://github.com/DMS-Menula)  
-📺 [YouTube – Code Hero](https://www.youtube.com/@blockcodingpro)
+📺 [YouTube](https://www.youtube.com/@blockcodingpro)
 
 ---
 

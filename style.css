@@ -1,0 +1,183 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  background: radial-gradient(circle at center, #040404 0%, #000 100%);
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.fog-overlay, .fog-overlay::before, .fog-overlay::after {
+  position: absolute;
+  top: 0; left: 0;
+  width: 200%;
+  height: 100%;
+  background: url("assets/fog.png") repeat-x;
+  background-size: cover;
+  z-index: 1;
+}
+.fog-overlay {
+  animation: fogMove 90s linear infinite;
+}
+.fog-overlay::before {
+  content: "";
+  opacity: 0.4;
+  animation: fogMove2 120s linear infinite;
+}
+.fog-overlay::after {
+  content: "";
+  opacity: 0.3;
+  animation: fogMove3 150s linear infinite;
+}
+@keyframes fogMove { to { transform: translateX(-50%); } }
+@keyframes fogMove2 { to { transform: translateX(-40%); } }
+@keyframes fogMove3 { to { transform: translateX(-30%); } }
+
+#lightning {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.8);
+  opacity: 0;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.container { position: relative; z-index: 3; text-align: center; }
+
+.portal-door {
+  position: relative;
+  width: 320px; height: 400px;
+  border: 3px solid #bfa17f;
+  box-shadow: 0 0 50px rgba(255,140,0,0.6);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.door-left, .door-right {
+  position: absolute;
+  top: 0; width: 50%; height: 100%;
+  background: linear-gradient(135deg, #1a1a1a, #0f0f0f);
+  transition: transform 1.2s ease-in-out;
+}
+.door-left { left: 0; border-right: 2px solid #bfa17f; transform-origin: left center; }
+.door-right { right: 0; border-left: 2px solid #bfa17f; transform-origin: right center; }
+
+.glow {
+  position: absolute;
+  width: 100%; height: 100%;
+  background: radial-gradient(circle at center, rgba(255,120,0,0.2) 0%, transparent 70%);
+  z-index: 0;
+  mix-blend-mode: screen;
+  animation: pulse 3s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+#enterBtn {
+  position: absolute; bottom: 20px; left: 50%;
+  transform: translateX(-50%);
+  background: #bfa17f; color: #000;
+  padding: 12px 24px; border: none;
+  border-radius: 50px; font-family: 'Creepster', cursive;
+  cursor: pointer; z-index: 2;
+  transition: all 0.3s;
+}
+#enterBtn:hover { background: #0f52ba; color: #fff; }
+
+.portal-content {
+  display: none; text-align: center;
+  animation: fadeIn 2s ease forwards;
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.portal-content h1 {
+  font-family: 'Creepster', cursive;
+  font-size: 3.2rem;
+  color: #ff7518;
+  text-shadow: 0 0 20px #ff7518, 0 0 40px #ff7518;
+  margin-bottom: 10px;
+}
+
+.portal-content p {
+  color: #ddd; font-size: 1.1rem; margin-bottom: 20px;
+}
+
+#replayBtn {
+  background: transparent;
+  border: 2px solid #bfa17f;
+  color: #bfa17f;
+  padding: 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+#replayBtn:hover { background: #bfa17f; color: #000; }
+
+.bats {
+  position: absolute;
+  width: 60px;
+  opacity: 0.8;
+  animation: fly linear infinite;
+}
+@keyframes fly {
+  0% { transform: translateX(-10%) translateY(0); }
+  50% { transform: translateX(100vw) translateY(-20vh); }
+  100% { transform: translateX(-10%) translateY(0); }
+}
+
+.cursor-glow {
+  position: fixed;
+  width: 60px; height: 60px;
+  background: radial-gradient(circle, rgba(255,120,0,0.5), transparent);
+  border-radius: 50%;
+  pointer-events: none;
+  mix-blend-mode: lighten;
+  z-index: 999;
+}
+
+#soulsCanvas {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+}
+
+.bats {
+  position: absolute;
+  width: 40px;
+  opacity: 0.8;
+  filter: drop-shadow(0 0 5px #ff7518);
+  animation: fly linear infinite;
+  filter: drop-shadow(0 0 10px #ff7518) drop-shadow(0 0 20px #ff4000);
+}
+
+@keyframes fly {
+  0% {
+    transform: translateX(0) translateY(0) scale(1) rotate(0deg);
+  }
+  25% {
+    transform: translateX(20vw) translateY(-10vh) scale(1.2) rotate(5deg);
+  }
+  50% {
+    transform: translateX(40vw) translateY(5vh) scale(0.9) rotate(-10deg);
+  }
+  75% {
+    transform: translateX(60vw) translateY(-5vh) scale(1.1) rotate(8deg);
+  }
+  100% {
+    transform: translateX(0) translateY(0) scale(1) rotate(0deg);
+  }
+}

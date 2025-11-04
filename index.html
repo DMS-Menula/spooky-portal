@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Spooky Portal 🎃</title>
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <audio id="bgMusic" src="assets/bg.mp3" loop></audio>
+  <audio id="whisper" src="assets/whisper.mp3" preload="auto"></audio>
+
+  <div class="fog-overlay"></div>
+  <div id="lightning"></div>
+
+  <div class="container">
+    
+    <div class="portal-door">
+      <div class="door-left"></div>
+      <div class="door-right"></div>
+      <div class="glow"></div>
+      <button id="enterBtn">Enter the Portal</button>
+    </div>
+
+    <div class="portal-content" id="portalContent">
+
+      <canvas id="soulsCanvas"></canvas>
+      <div id="batsContainer"></div>
+      <img src="assets/pumpkin.gif" class="pumpkin" alt="pumpkin">
+
+      <h1 id="spellText">Welcome to The Spooky Portal</h1>
+      <p>Dare to explore the mysteries beyond...</p>
+      <button id="replayBtn">Close Portal</button>
+
+    </div>
+
+  </div>
+
+
+
+
+
+
+  <div class="cursor-glow"></div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

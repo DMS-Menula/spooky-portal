@@ -2,7 +2,7 @@
 
 A CSS-only animated Halloween scene featuring a glowing moon, flying bats, and a magical night sky — created for the **[Frontend Challenge - Halloween Edition (CSS Art)](https://dev.to/challenges/frontend-2025-10-15)** 🎃
 
-<img width="1618" height="803" alt="Screenshot 2025-11-04 114641" src="https://github.com/user-attachments/assets/50d330c8-8b86-416d-a1f2-d505c55dcd56" />
+<img width="1877" height="849" alt="image" src="https://github.com/user-attachments/assets/d4737ea7-be56-418b-a2a7-73b096cc7dc5" />
 
 ---
 
